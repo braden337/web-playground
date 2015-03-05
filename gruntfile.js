@@ -36,6 +36,10 @@ module.exports = function(grunt) {
       }
     },
 
+    exec: {
+      open_webpage: 'open http://localhost:8080'
+    },
+
     watch: {
 
       sass: {
@@ -76,11 +80,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks('grunt-exec');
 
 
   // Default task(s).
-  grunt.registerTask('default', ['connect', 'watch']);
-  grunt.registerTask('flow', ['sass', 'postcss', 'connect', 'watch']);
+  grunt.registerTask('default', ['connect', 'exec', 'watch']);
+  grunt.registerTask('flow', ['sass', 'postcss', 'connect', 'exec', 'watch']);
 
 };
 
