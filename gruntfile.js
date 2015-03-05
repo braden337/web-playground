@@ -80,6 +80,7 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['connect', 'watch']);
+  grunt.registerTask('flow', ['sass', 'postcss', 'connect', 'watch']);
 
 };
 
