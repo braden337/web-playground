@@ -1,0 +1,15 @@
+# Can ignore specific files
+.DS_Store
+.env
+
+# Use wildcards as well
+*~
+~.swp
+
+# Can also ignore all directories and files in a directory.
+node_modules/**/*
+bower_components/**/*
+.sass-cache/**/*
+dist/**/*
+build/**/*
+style.css
