@@ -26,6 +26,15 @@ module.exports = function(grunt) {
       dist: { src: 'build/style.css', dest: 'style.css' }
     },
 
+    connect: {
+      server: {
+        options: {
+          port: 8080,
+          base: '',
+          livereload: true
+        }
+      }
+    },
 
     watch: {
 
@@ -63,13 +72,39 @@ module.exports = function(grunt) {
   });
 
   // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-postcss');
 
-  //grunt.loadNpmTasks('grunt-autoprefixer');
 
   // Default task(s).
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['connect', 'watch']);
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
